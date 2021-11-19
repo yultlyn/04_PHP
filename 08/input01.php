@@ -18,7 +18,7 @@
     <!-- 男性と女性をラジオボタンで選択させる。
     選択するとそのまま性別(gender)を和文で表示 -->
     <input type="radio" name="gender" value="男性">男性
-    <input type="radio" name="gender" value="女性">女性
+    <input type="radio" name="gender" vaue="女性">女性
 </p>
 
 <p><input type="submit" value="送信"></p>

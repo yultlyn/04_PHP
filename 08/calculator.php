@@ -1,9 +1,12 @@
 <?php
+$num1 = '';
+$num2 = '';
+if (!empty($_POST)) {
+    $num1 = $_POST['num1'];
+    $num2 = $_POST['num2'];
+    $result = $num1 + $num2;
+}
 
-$num1 = $_POST['num1'];
-$num2 = $_POST['num2'];
-
-$result = $num1 + $num2;
 
 ?>
 
@@ -17,6 +20,9 @@ $result = $num1 + $num2;
 </head>
 <body>
     <h1>計算</h1>
+    <?php if ($_SERVER["REQUEST_METHOD"] === "POST"): ?>
+        
+    <?php endif; ?>
     <h2><?=$num1?> + <?=$num2?> = <?=$result?></h2>
     <form action="calculator.php" method="post" novalidate>
         <input type="text" name="num1" size="2" maxlength="2" value="<?=$num1?>"> +

@@ -1,3 +1,14 @@
+<?php
+$goods['name'] = '和風柄レターセット';
+$goods['unitPrice'] = '980';
+
+$count = $_POST['count'];
+
+
+$totalPrice = $goods['unitPrice'] * $count;
+
+
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -23,32 +34,23 @@
 </head>
 <body>
     <h1>ショッピングカート</h1>
+    <form action="" method="post" novalidate>
     <table>
-        <th>商品名</th>
         <tr>
-            <table>
-                
-            </table>
-            <td>和風柄レターセット</td>
-            
+            <th>商品名</th>
             <th>単価</th>
-            
-                <td>980円</td>
-            
-            
             <th>数量</th>
-            
-                <td>3</td>
-            
             <th>小計</th>
-            
-                <td>2940円</td>
-            
+        </tr>
+        <tr>
+            <td><?=$goods['name']?></td>
+            <td><?=$goods['unitPrice']?>円</td>
+            <td><input type="text" name="count" value="<?= htmlspecialchars($count, ENT_QUOTES, 'UTF-8');?>"></td>
+            <td><?= htmlspecialchars($totalPrice, ENT_QUOTES, 'UTF-8');?>円</td>
         </tr>
         </table>
 
     
-    <form action="" method="post" novalidate>
         
         <p><input type="submit" value="更新"></p>
     </form>
