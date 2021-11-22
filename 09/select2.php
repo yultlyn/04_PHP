@@ -28,6 +28,14 @@ if (!empty($_POST)) {
         <option <?php if($item === 'リンゴ') echo 'selected'; ?>>リンゴ</option>
         <option <?php if($item === 'バナナ') echo 'selected'; ?> >バナナ</option>
         <option <?php if($item === 'ぶどう') echo 'selected'; ?>>ぶどう</option>
+        
+        <option <?=$item=== 'メロン' ? 'selected' : ' '?>>メロン</option>
+        <option <?=$item=== 'みかん' ? 'selected' : ' '?>>みかん</option>
+        <option <?=$item=== 'さくらんぼ' ? 'selected' : ' '?>>さくらんぼ</option>
+        <option <?=$item=== 'マンゴー' ? 'selected' : ' '?>>マンゴー</option>
+        
+
+        
     </select>
     <input type="submit" value="送信">
     </p>
