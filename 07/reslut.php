@@ -1,5 +1,5 @@
 <?php
-$area   = $_GET['area'];
+$area = $_GET['area'];
 $layout = $_GET['layout'];
 ?>
 <p>地域は<?=$area?>です</p>

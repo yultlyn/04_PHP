@@ -29,6 +29,8 @@ if (!empty($_POST)) {
         <input type="text" name="num2" size="2" maxlength="2" value="<?=$num2?>"> =
 
         <p><input type="submit" value="計算"></p>
+
+        
     </form>
 </body>
 </html>

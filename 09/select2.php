@@ -34,8 +34,6 @@ if (!empty($_POST)) {
         <option <?=$item=== 'さくらんぼ' ? 'selected' : ' '?>>さくらんぼ</option>
         <option <?=$item=== 'マンゴー' ? 'selected' : ' '?>>マンゴー</option>
         
-
-        
     </select>
     <input type="submit" value="送信">
     </p>

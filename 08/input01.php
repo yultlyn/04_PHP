@@ -8,7 +8,8 @@
 </head>
 <body>
 
-</body><form action="input02.php" method="post">
+</body>
+<form action="input02.php" method="post">
     <!-- 隠しフォーム -->
     <input type="hidden" name="id" value="1234">
     <p>ユーザ名：<input type="text" name="user"></p>

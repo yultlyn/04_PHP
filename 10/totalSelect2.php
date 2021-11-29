@@ -20,13 +20,15 @@ if (!empty($_POST)) {
         $total += $numArr[$arr][$i];
     }
 
-    if (!is_numeric($num)){
-        $result = '数値を入力してください';
+    if (!is_numeric($num)) {
+        $error = '数値を入力してください';
     } elseif ($num < 0 || $num > 99) {
-        $result = '1から99までの数値を入力してください';
+        $error = '1から99までの数値を入力してください';
     } else {
         $result = $total * $num;
     }
+
+    $arrPlus = $arr + 1;
 }
 ?>
 
@@ -38,6 +40,32 @@ if (!empty($_POST)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>合計値の計算</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 800px;
+        }
+
+        th,
+        td {
+            border: 1px solid #999;
+            padding: 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        .error {
+            font-size: 80%;
+            color: #900;
+        }
+
+        .error::before {
+            content: "※ ";
+        }
+    </style>
 </head>
 
 <body>
@@ -57,8 +85,21 @@ if (!empty($_POST)) {
         </p>
         <p><input type="submit" value="計算"></p>
     </form>
-    <?php if ($_SERVER["REQUEST_METHOD"] === "POST"): ?>
-        合計結果：<?=htmlspecialchars($result, ENT_QUOTES, 'UTF-8');?>
+    <?php if (isset($error)) : ?>
+        <p class="error"><?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?></p>
+    <?php elseif ($_SERVER["REQUEST_METHOD"] === "POST") : ?>
+        <table>
+            <tr>
+                <th>配列<?= $arrPlus ?></th>
+                <?php for ($i = 0; $i < count($numArr[$arr]); $i++) : ?>
+                    <td><?= $numArr[$arr][$i] ?></td>
+                <?php endfor; ?>
+                <th>合計 <?= $total ?></th>
+                <th>X <?= htmlspecialchars($num, ENT_QUOTES, 'UTF-8'); ?> =</th>
+                <th>合計結果： <?= $result ?></th>
+            </tr>
+        </table>
+
     <?php endif; ?>
 </body>
 

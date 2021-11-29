@@ -16,7 +16,5 @@
             <li><a href="goods.php?id=3">冷蔵庫</a></li>
             <li><a href="goods.php?id=4">洗濯機</a></li>
         </ul>
-
-    </form>
 </body>
 </html>
